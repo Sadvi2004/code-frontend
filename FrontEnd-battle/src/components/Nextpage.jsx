@@ -82,7 +82,7 @@ const Nextpage = () => {
         setIsSubmitted(true);
 
         try {
-            const response = await fetch("http://localhost:8080/quizAttempted", {
+            const response = await fetch("https://code-frontend-rp85.onrender.com/quizAttempted", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
