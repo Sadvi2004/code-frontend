@@ -17,6 +17,10 @@ mongoose
   })
   .catch((e) => console.log("Error connecting to database:", e));
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the backend server!");
+});
+
 // Register endpoint
 app.post("/register", async (req, res) => {
   try {
