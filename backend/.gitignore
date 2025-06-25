@@ -1,0 +1,7 @@
+# Root-level ignore
+node_modules/
+.env
+
+# Ignore backend-specific files
+backend/node_modules/
+backend/.env

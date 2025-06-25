@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -6,15 +7,11 @@ const Score = require("./models/quizschema");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({ credentials: true, origin: "https://code-frontend-alpha.vercel.app" }));
 
-const mongoUrl =
-  "mongodb+srv://sadvibayyavarapu:sadvi134ash2004@cluster0.zyjmmfq.mongodb.net/?retryWrites=true&w=majority";
+const mongoUrl = process.env.MONGO_URI
 mongoose
-  .connect(mongoUrl, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(mongoUrl)
   .then(() => {
     console.log("Connected to database");
   })
