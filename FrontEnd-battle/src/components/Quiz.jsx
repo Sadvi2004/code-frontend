@@ -66,7 +66,7 @@ const Quiz = () => {
         setSubmitted(true);
 
         // Send score to backend
-        axios.post("http://localhost:8080/quizAttempted", { score: calculatedScore })
+        axios.post("https://code-frontend-rp85.onrender.com/quizAttempted", { score: calculatedScore })
             .then(response => {
                 console.log('Score saved:', response.data);
             })
